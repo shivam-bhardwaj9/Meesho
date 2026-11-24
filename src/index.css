@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --color-meesho-plum: #9F2089;
+  --color-meesho-plum-hover: #831871;
+  --color-meesho-pink: #F43397;
+  --color-meesho-green: #038D63;
+  --color-meesho-ink: #353543;
+  --color-meesho-muted: #616173;
+  --color-meesho-surface: #F8F8FA;
+  --color-meesho-border: #EAEAEF;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    scroll-padding-top: 132px;
+  }
+
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: clip;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom subtle scrollbars for category menus and drawers */
+.meesho-scroll {
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.meesho-scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.meesho-scroll::-webkit-scrollbar-track {
+  background: #F8F8FA;
+}
+
+.meesho-scroll::-webkit-scrollbar-thumb {
+  background: #D6D6E0;
+  border-radius: 3px;
+}
+
+.meesho-scroll::-webkit-scrollbar-thumb:hover {
+  background: #9F2089;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes meesho-marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.meesho-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: meesho-marquee 24s linear infinite;
+  will-change: transform;
+}
+
+.meesho-marquee-wrapper:hover .meesho-marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .meesho-marquee-track {
+    animation: none;
+  }
+}
+

@@ -1,0 +1,8 @@
+{
+  "name": "Meesho — Online Shopping Site for Fashion, Electronics, Home & More",
+  "description": "Shop quality fashion, ethnic wear, electronics, home & kitchen essentials at lowest prices with Free Delivery and Cash on Delivery.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
